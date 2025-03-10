@@ -18,8 +18,12 @@ ENV LC_ALL en_US.UTF-8
 # Make python3 default
 RUN rm -f /usr/bin/python \
      && ln -s /usr/bin/python3 /usr/bin/python
+RUN apt-get update
+RUN apt-get install ffmpeg libsm6 libxext6  -y
+RUN apt-get install vim -y
 
-
+RUN pip3 install opencv-python
+RUN pip3 install gym
 RUN pip3 install jupyter
 RUN pip3 install numpy
 RUN pip3 install matplotlib
@@ -28,5 +32,10 @@ RUN pip3 install pandas
 RUN pip3 install plotly
 RUN pip3 install pyyaml
 RUN pip3 install requests
+RUN pip3 install seaborn
+RUN pip3 install scikit-learn
+RUN pip3 install torch
+RUN pip3 install imageio
+RUN pip3 install pygame
 WORKDIR /main
 RUN chmod -R a+w .
