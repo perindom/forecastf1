@@ -20,6 +20,7 @@ RUN rm -f /usr/bin/python \
      && ln -s /usr/bin/python3 /usr/bin/python
 
 
+RUN pip3 install gym
 RUN pip3 install jupyter
 RUN pip3 install numpy
 RUN pip3 install matplotlib
@@ -28,5 +29,8 @@ RUN pip3 install pandas
 RUN pip3 install plotly
 RUN pip3 install pyyaml
 RUN pip3 install requests
+RUN pip3 install seaborn
+RUN pip3 install scikit-learn
+RUN pip3 install pydotplus
 WORKDIR /main
 RUN chmod -R a+w .
